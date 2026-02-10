@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dzień Bezpiecznego Internetu</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="dark">
+
+  <header class="header">
+    <h1>Dzień Bezpiecznego Internetu</h1>
+    <p>Dbaj o bezpieczeństwo w sieci - chroń swoje dane i zdrowie psychiczne.</p>
+  </header>
+
+  <nav class="nav">
+    <a href="index.html">Strona główna</a>
+    <a href="zagrozenia.html">Zagrożenia</a>
+    <a href="zasady.html">Zasady</a>
+    <a href="netykieta.html">Netykieta</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="materialy.html">Materiały</a>
+    <a href="https://www.saferinternet.pl/dbi/o-dbi.html">DBI</a>
+
+    <button id="dlmode" onclick="dlmode()">Tryb Jasny/Ciemny</button>
+  </nav>
+
+  <main class="main">
+
+    <section class="sekcja">
+      <h2>Co to jest DBI?</h2>
+      <p>
+        Dzień Bezpiecznego Internetu obchodzony jest z inicjatywy Komisji Europejskiej od 2004 roku i ma na celu inicjowanie i propagowanie
+        działań na rzecz bezpiecznego dostępu dzieci i młodzieży do zasobów internetowych.
+      </p>
+    </section>
+
+    <section class="sekcja">
+      <h2>Losowa porada</h2>
+      <b><i><p id="porada">porada</p></i></b>
+    </section>
+
+    <section class="uklad">
+      <div class="sekcja">
+        <h3>Zagrożenia</h3>
+        <p>Dowiedz się czym jest phishing, malware i fake news.</p>
+        <a class="link" href="zagrozenia.html">Przejdź</a>
+      </div>
+
+      <div class="sekcja">
+        <h3>Zasady bezpieczeństwa</h3>
+        <p>Jak tworzyć hasła i chronić swoje konto?</p>
+        <a class="link" href="zasady.html">Przejdź</a>
+      </div>
+
+      <div class="sekcja">
+        <h3>Netykieta</h3>
+        <p>Jak zachowywać się w sieci i jak reagować na hejt.</p>
+        <a class="link" href="netykieta.html">Przejdź</a>
+      </div>
+
+      <div class="sekcja">
+        <h3>Quiz</h3>
+        <p>Sprawdź swoją wiedzę o bezpieczeństwie online.</p>
+        <a class="link" href="quiz.html">Rozwiąż</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>2026 Dzień Bezpiecznego Internetu</p>
+  </footer>
+
+  <script>
+
+    //porada dnia
+    const porady = [
+      "Nie klikaj podejrzanych linków w wiadomościach.",
+      "Stosuj uwierzytelnianie dwuetapowe (2FA).",
+      "Nie udostępniaj swojego hasła nikomu.",
+      "Sprawdzaj czy strona ma kłódkę HTTPS.",
+      "Nie pobieraj plików z nieznanych źródeł.",
+      "Uważaj na fake news - sprawdzaj źródła informacji.",
+      "Nie podawaj danych osobowych obcym osobom.",
+      "Regularnie instaluj aktualizacje systemu operacyjnego, przeglądarek i aplikacji",
+      "Nie pozostawiaj telefonu, tabletu ani komputera bez nadzoru i ustaw blokadę ekranu",
+      "Używaj programów antywirusowych i firewall",
+      "Regularnie twórz kopie zapasowe ważnych danych"
+    ];
+
+    const poradaElement = document.getElementById("porada");
+    const losowaPorada = porady[Math.floor(Math.random() * porady.length)];
+    poradaElement.textContent = losowaPorada;
+
+    //darkmode
+    function dlmode(){
+        document.body.classList.toggle("dark");
+        const button = document.getElementById("dlmode");
+
+        if (document.body.classList.contains("dark")){
+            button.textContent = "Tryb jasny";
+        }
+        else {
+            button.textContent = "Tryb ciemny";
+        }
+    }
+  </script>
+
+</body>
+</html>
