@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dzień Bezpiecznego Internetu</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="dark">
+
+  <header class="header">
+    <h1>Dzień Bezpiecznego Internetu</h1>
+    <p>Zagrożenia</p>
+  </header>
+
+  <nav class="nav">
+    <a href="index.html">Strona główna</a>
+    <a href="zagrozenia.html">Zagrożenia</a>
+    <a href="zasady.html">Zasady</a>
+    <a href="netykieta.html">Netykieta</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="materialy.html">Materiały</a>
+    <a href="https://www.saferinternet.pl/dbi/o-dbi.html">DBI</a>
+    <button id="dlmode" onclick="dlmode()">Tryb Jasny/Ciemny</button>
+  </nav>
+
+  <main class="main">
+
+    <section class="sekcja">
+      <h1>Zagrożenia w Internecie</h1><br>
+      
+      <section class="sekcjazagrozen">
+        <h3>1. Zagrożenia związane z prywatnością</h3>
+        <ul>
+          <li><strong>Wykradanie danych osobowych:</strong>proces, w którym nieuprawnione osoby zdobywają Twoje dane identyfikacyjne, np. PESEL, adres, numer telefonu lub dane bankowe, zazwyczaj za pomocą ataków hakerskich lub luk w systemach.</li>
+          <li><strong>Śledzenie online:</strong> technika, w której strony internetowe i aplikacje monitorują Twoje zachowanie w sieci, np. odwiedzane strony, kliknięcia i lokalizację, w celu profilowania użytkownika lub reklamy.</li>
+          <li><strong>Nieuprawniony dostęp do kont:</strong> sytuacja, w której ktoś zdobywa hasła lub tokeny autoryzacyjne, by zalogować się na Twoje konta bez Twojej zgody.</li>
+          <li><strong>Udostępnianie danych przez aplikacje:</strong> mechanizm, w którym aplikacje lub gry zbierają i przesyłają Twoje informacje (np. kontakty, zdjęcia, lokalizację) bez świadomej zgody użytkownika.</li>
+        </ul>
+      </section>
+
+      <section class="sekcjazagrozen">
+        <h3>2. Zagrożenia techniczne</h3>
+        <ul>
+          <li><strong>Złośliwe oprogramowanie (malware):</strong> programy stworzone w celu wyrządzenia szkody komputerom lub kradzieży danych; obejmuje wirusy, trojany i spyware.</li>
+          <li><strong>Phishing:</strong> metoda oszustwa polegająca na podszywaniu się pod zaufane źródło (np. bank, portal społecznościowy) w celu wyłudzenia poufnych informacji.</li>
+          <li><strong>Ransomware:</strong> rodzaj złośliwego oprogramowania, które szyfruje pliki ofiary i żąda okupu za ich odblokowanie.</li>
+          <li><strong>Ataki typu DDoS:</strong> celowe przeciążenie serwera lub sieci dużą ilością żądań, aby uniemożliwić dostęp do strony lub usługi.</li>
+          <li><strong>Luki w oprogramowaniu:</strong> błędy lub niedociągnięcia w systemach i aplikacjach, które mogą zostać wykorzystane przez osoby trzecie do włamania lub infekcji urządzenia.</li>
+          <li><strong>Niebezpieczne linki i załączniki:</strong> hiperłącza lub pliki, które po kliknięciu mogą zainstalować malware lub wyłudzić dane osobowe.</li>
+        </ul>
+      </section>
+
+      <section class="sekcjazagrozen">
+        <h3>3. Zagrożenia społeczne</h3>
+        <ul>
+          <li><strong>Cyberprzemoc:</strong> forma agresji w internecie, w tym nękanie, obrażanie, zastraszanie lub upokarzanie innych użytkowników w sieci.</li>
+          <li><strong>Grooming:</strong> manipulowanie przez dorosłych osobami nieletnimi online, w celu budowania zaufania i późniejszego wykorzystywania seksualnego.</li>
+          <li><strong>Sexting i udostępnianie intymnych materiałów:</strong> przesyłanie lub publikowanie prywatnych zdjęć czy filmów o charakterze erotycznym, które mogą zostać rozpowszechnione bez zgody.</li>
+          <li><strong>Dezinformacja i fake news:</strong> celowe tworzenie lub rozpowszechnianie fałszywych informacji, które mogą wprowadzać w błąd lub manipulować opinią publiczną.</li>
+          <li><strong>Hate speech / mowa nienawiści:</strong> publikowanie treści obraźliwych, agresywnych lub dyskryminujących wobec osób lub grup społecznych w internecie.</li>
+        </ul>
+      </section>
+
+      <section class="sekcjazagrozen">
+        <h3>4. Zagrożenia behawioralne</h3>
+        <ul>
+          <li><strong>Uzależnienie od internetu:</strong> kompulsywne i nadmierne korzystanie z sieci, gier, social media lub przeglądania stron, które zaburza codzienne funkcjonowanie.</li>
+          <li><strong>Niebezpieczne udostępnianie informacji:</strong> świadome lub przypadkowe publikowanie prywatnych danych, zdjęć lub lokalizacji, które mogą zostać wykorzystane przez osoby trzecie.</li>
+          <li><strong>Brak krytycznego myślenia w sieci:</strong> nieumiejętność weryfikowania informacji online, co prowadzi do łatwego uwierzenia w fałszywe treści i ich dalszego rozpowszechniania.</li>
+          <li><strong>Imitacja i podszywanie się:</strong> tworzenie fałszywych profili lub tożsamości w sieci w celu oszustwa, manipulacji lub szkodzenia innym użytkownikom.</li>
+        </ul>
+      </section>
+      
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>2026 Dzień Bezpiecznego Internetu</p>
+  </footer>
+
+    <script>
+      //darkmode
+    function dlmode(){
+        document.body.classList.toggle("dark");
+        const button = document.getElementById("dlmode");
+
+        if (document.body.classList.contains("dark")){
+            button.textContent = "Tryb jasny";
+        }
+        else {
+            button.textContent = "Tryb ciemny";
+        }
+    }
+  </script>
+
+</body>
+</html>
