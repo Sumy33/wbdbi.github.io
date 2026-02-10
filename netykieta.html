@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dzień Bezpiecznego Internetu</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="dark">
+
+  <header class="header">
+    <h1>Dzień Bezpiecznego Internetu</h1>
+    <p>Netykieta</p>
+  </header>
+
+  <nav class="nav">
+    <a href="index.html">Strona główna</a>
+    <a href="zagrozenia.html">Zagrożenia</a>
+    <a href="zasady.html">Zasady</a>
+    <a href="netykieta.html">Netykieta</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="materialy.html">Materiały</a>
+    <a href="https://www.saferinternet.pl/dbi/o-dbi.html">DBI</a>
+    <button id="dlmode" onclick="dlmode()">Tryb Jasny/Ciemny</button>
+  </nav>
+
+  <main class="main">
+
+    <section class="sekcja">
+      <h1>Netykieta</h1><br>
+
+      <section class="sekcjanet">
+        <h2>Czym jest?</h2>
+        <p>Netykieta to zbiór zasad dotyczących dobrego zachowania w Internecie.
+          Jej celem jest między innymi zachowanie zdrowej przestrzeni komunikacji użytkowników w Internecie.
+        </p>
+      </section>
+
+      <h1>Główne zalecenia:</h1><br>
+
+      <section class="sekcjanet">
+        <h3>Dla grup i list dyskusyjnych:</h3>
+        <ul>
+          <li>zakaz pisania wulgaryzmów;</li>
+          <li>zakaz spamowania</li>
+          <li>zakaz wysyłania łańcuszków internetowych</li>
+          <li>nakaz zapoznania się z wykazem FAQ przed zadaniem pytania</li>
+          <li>zakaz pisania nie na temat (OT - off-topic)</li>
+          <li>zakaz ciągłego pisania wiadomości wielkimi literami</li>
+          <li>zakaz nadużywania interpunkcji</li>
+          <li>zakaz prowokowania kłótni, czyli trollowania</li>
+        </ul>
+      </section>
+
+      <section class="sekcjanet">
+        <h3>Dla usług interaktywnych (komunikatory, czaty, fora dyskusyjne na stronach WWW):</h3>
+        <ul>
+          <li>obowiązek korzystania z funkcji „Szukaj” na forach, przed założeniem nowego wątku (na omawiany już temat/problem)</li>
+          <li>zakaz floodowania (wielokrotnego wysłania tej samej wiadomości lub wielu różnych wiadomości)</li>
+          <li>nakaz zapoznania się z zasadami – FAQ danego kanału/forum/czatu i przestrzeganie zawartych tam zasad szczegółowych</li>
+          <li>zakaz ciągłego pisania wielkimi literami</li>
+          <li>zakaz pisania naprzemiennie wielkich i małych liter (tzw. poke-pismo)</li>
+          <li>zakaz nadużywania znaków interpunkcyjnych oraz emotikon</li>
+        </ul>
+      </section>
+
+      <section class="sekcjanet">
+        <h3>Dla korespondencji elektronicznej (e-mail):</h3>
+        <ul>
+          <li>nakaz trzymania się wątku w korespondencji elektronicznej lub cytowanie e-maila</li>
+          <li>nakaz dopisywania wątku korespondencji pod spodem (głównie dot. e-mail)</li>
+          <li>zalecenie, by sygnaturka nie miała więcej niż cztery linie</li>
+          <li>zastosowanie zasad języka</li>
+          <li>zalecenie, by załączniki o dużym rozmiarze przesyłać za pomocą serwisów chmurowych[</li>
+        </ul>
+      </section>
+
+    </section>
+
+    <p>Źródło: <a href="https://pl.wikipedia.org/wiki/Netykieta">https://pl.wikipedia.org/wiki/Netykieta</a></p>
+
+  </main>
+
+  <footer class="footer">
+    <p>Dzień Bezpiecznego Internetu 2026</p>
+  </footer>
+
+    <script>
+      //darkmode
+    function dlmode(){
+        document.body.classList.toggle("dark");
+        const button = document.getElementById("dlmode");
+
+        if (document.body.classList.contains("dark")){
+            button.textContent = "Tryb jasny";
+        }
+        else {
+            button.textContent = "Tryb ciemny";
+        }
+    }
+  </script>
+
+</body>
+</html>

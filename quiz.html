@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dzień Bezpiecznego Internetu</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="dark">
+
+  <header class="header">
+    <h1>Dzień Bezpiecznego Internetu</h1>
+    <p>Quiz</p>
+    <img src="tenna.png" alt="tenna" class="tenna" height="140px" width="90px">
+  </header>
+
+  <nav class="nav">
+    <a href="index.html">Strona główna</a>
+    <a href="zagrozenia.html">Zagrożenia</a>
+    <a href="zasady.html">Zasady</a>
+    <a href="netykieta.html">Netykieta</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="materialy.html">Materiały</a>
+    <a href="https://www.saferinternet.pl/dbi/o-dbi.html">DBI</a>
+    <button id="dlmode" onclick="dlmode()">Tryb Jasny/Ciemny</button>
+  </nav>
+
+  <main class="main">
+
+    <section class="sekcjaquiz">
+      <div id="quiz"></div><br> 
+      <button class="przycisk" onclick="sprawdz()">Sprawdź wynik</button> 
+      <div id="wynik"></div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Dzień Bezpiecznego Internetu 2026</p>
+  </footer>
+
+    <script>
+      //darkmode
+    function dlmode(){
+        document.body.classList.toggle("dark");
+        const button = document.getElementById("dlmode");
+
+        if (document.body.classList.contains("dark")){
+            button.textContent = "Tryb jasny";
+        }
+        else {
+            button.textContent = "Tryb ciemny";
+        }
+    }
+    //quiz
+    const wszystkiePytania = [
+      {
+        p:"Co to jest phishing?",
+        o:["Gra","Oszustwo wyłudzające dane","Antywirus","Hasło WiFi"],
+        odp:1
+      },
+      {
+        p:"Co oznacza 2FA?",
+        o:["Wirus","Dwuskładnikowe logowanie","Dwa fałszywe adresy","Program"],
+        odp:1
+      },
+      {
+        p:"Które hasło jest najlepsze?",
+        o:["T#9kL!2pQ@7","123456","haslo123","AlaMaKota"],
+        odp:0
+      },
+      {
+        p:"Co zrobić przy cyberprzemocy?",
+        o:["Oddać hejt","Zgłosić i zablokować","Nic nie robić","Usunąć internet"],
+        odp:1
+      },
+      {
+        p:"Kłódka przy stronie oznacza:",
+        o:["Reklamę","Wirus","Szyfrowane połączenie","Strona darmowa"],
+        odp:2
+      },
+      {
+        p:"Fake news to:",
+        o:["Prawda","Antywirus","Gra","Fałszywa informacja"], 
+        odp:3
+      },
+      {
+        p:"Malware to:",
+        o:["Ochrona","Złośliwe oprogramowanie","Hasło","Aktualizacja"],
+        odp:1
+      },
+      {
+        p:"Najlepsza ochrona konta:",
+        o:["To samo hasło wszędzie","Brak hasła","Silne hasło + 2FA","Podawanie hasła znajomym"],
+        odp:2
+      },
+      {
+        p:"Pliki pobieramy najlepiej:",
+        o:["Z reklam","Z podejrzanych stron","Z zaufanych źródeł","Ze spamu"],
+        odp:2
+      },
+      {
+        p:"Co to jest cyberprzemoc?",
+        o:["Wirus","Przemoc przez internet","Gra online","Nowa aplikacja"],
+        odp:1
+      },
+      {
+        p:"Co to jest spam?",
+        o:["Antywirus","Hasło","Bezpieczna strona","Reklamy i niechciane wiadomości"],
+        odp:3
+      },
+      {
+        p: "Jaki jest główny cel Dnia Bezpiecznego Internetu (DBI)?",
+        o: ["Promowanie bezpiecznego i odpowiedzialnego korzystania z internetu", "Sprzedaż nowych aplikacji", "Tworzenie gier online", "Testowanie prędkości internetu"],
+        odp: 0
+      },
+      {
+        p: "Kiedy obchodzony jest Dzień Bezpiecznego Internetu?",
+        o: ["Luty", "Marzec", "Grudzień", "Czerwiec"],
+        odp: 0
+      },
+      {
+        p: "Co zrobić, gdy otrzymasz podejrzany mail od nieznanej osoby?",
+        o: ["Nie otwierać linków i zgłosić podejrzaną wiadomość", "Kliknąć link i podać dane", "Przesłać znajomym", "Usunąć internet"],
+        odp: 0
+      },
+      {
+        p: "Jakie informacje są bezpieczne do publikowania w sieci?",
+        o: ["Tylko takie, które nie zagrażają Tobie ani innym", "Hasła i PIN-y", "Adresy rodziny", "Wszystkie"],
+        odp: 0
+      },
+      {
+        p: "Co oznacza skrót 2FA w kontekście bezpieczeństwa?",
+        o: ["Dwustopniowa reklama", "Dwuskładnikowe uwierzytelnianie", "Dwa fałszywe adresy", "Gra online"],
+        odp: 1
+      },
+      {
+        p: "Które z poniższych jest przykładem phishingu?",
+        o: ["Aktualizacja systemu", "Nowa gra komputerowa", "Fałszywy mail podszywający się pod bank, proszący o dane",  "Zabezpieczenie konta 2FA"],
+        odp: 2
+      },
+      {
+        p: "Co oznacza symbol kłódki przy adresie strony?",
+        o: ["Strona jest darmowa", "Bezpieczne, szyfrowane połączenie", "Strona jest pełna reklam", "Strona jest wirusowa"],
+        odp: 0
+      },
+      {
+        p: "Jakie działanie pomaga chronić prywatność w sieci?",
+        o: ["Nieudostępnianie haseł i danych osobowych", "Publikowanie wszystkich zdjęć", "Klikanie w każdy link", "Udostępnianie PIN-u bankowego znajomym"],
+        odp: 0
+      },
+      {
+        p: "Co to jest malware?",
+        o: ["Program do nauki", "Szyfrowanie plików", "Antywirus", "Złośliwe oprogramowanie szkodzące komputerowi"],
+        odp: 3
+      },
+      {
+        p: "Dlaczego warto używać mocnych haseł i menedżera haseł?",
+        o: ["Aby zwiększyć bezpieczeństwo kont w internecie", "Aby szybciej grać w gry", "Aby mieć więcej znajomych online", "Aby mieć szybszy internet"],
+        odp: 0
+      }
+    ];
+
+    let pytania = wszystkiePytania.sort(() => Math.random() - 0.5).slice(0, 10);
+    let odp = Array(pytania.length).fill(-1);
+
+    function pokaz(){
+      const quiz = document.getElementById("quiz");
+      quiz.innerHTML = "";
+      pytania.forEach((x, i) => {
+        quiz.innerHTML += `<div class="sekcjaquiz"><h3>${i + 1}. ${x.p}</h3>` +
+          x.o.map((t, j) => `<label><input type="radio" name="p${i}" onclick="odp[${i}]=${j}"> ${t}</label><br>`).join("") + `</div>`;
+      });
+    }
+
+    function sprawdz(){
+      const wynik = document.getElementById("wynik");
+      let pkt = pytania.reduce((s, x, i) => s + (odp[i] === x.odp ? 1 : 0), 0);
+      wynik.innerHTML = `<div class="sekcjaquiz">Wynik: <b>${pkt}/${pytania.length}</b></div>`;
+    }
+
+    window.onload = pokaz;
+
+  </script>
+
+</body>
+</html>
